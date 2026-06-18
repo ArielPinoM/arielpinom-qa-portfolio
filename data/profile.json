@@ -1,0 +1,70 @@
+{
+  "name": "Ariel Pino",
+  "role": "Quality Assurance Engineer",
+  "specialties": "Automation · Python · PyTest · Selenium",
+  "badges": [
+    { "text": "✓ PASSED: Automation", "type": "passed" },
+    { "text": "i INFO: API Testing", "type": "info" },
+    { "text": "✓ PASSED: SQL / DB", "type": "passed" },
+    { "text": "~ ACTIVE: Learning", "type": "flaky" }
+  ],
+  "terminalLines": [
+    { "text": "$ pytest --collect-only -q", "class": "", "delay": 0 },
+    { "text": "", "class": "", "delay": 600 },
+    { "text": "collected 92 items", "class": "t-info", "delay": 800 },
+    { "text": "", "class": "", "delay": 900 },
+    {
+      "text": "✓ validating candidate profile...",
+      "class": "t-muted",
+      "delay": 1100
+    },
+    {
+      "text": "  [NAME]        Ariel          PASS",
+      "class": "t-pass",
+      "delay": 1400
+    },
+    {
+      "text": "  [ROLE]        QA Engineer Jr PASS",
+      "class": "t-pass",
+      "delay": 1650
+    },
+    {
+      "text": "  [LANG]        Python 3.12    PASS",
+      "class": "t-pass",
+      "delay": 1900
+    },
+    {
+      "text": "  [FRAMEWORK]   pytest 8.x     PASS",
+      "class": "t-pass",
+      "delay": 2150
+    },
+    {
+      "text": "  [AUTOMATION]  Selenium 4.x   PASS",
+      "class": "t-pass",
+      "delay": 2400
+    },
+    {
+      "text": "  [DB]          PostgreSQL      PASS",
+      "class": "t-pass",
+      "delay": 2650
+    },
+    { "text": "", "class": "", "delay": 2900 },
+    {
+      "text": "==========================================",
+      "class": "t-muted",
+      "delay": 3000
+    },
+    {
+      "text": "92 passed, 0 failed, 0 errors  (3.27s)",
+      "class": "t-pass",
+      "delay": 3200
+    },
+    {
+      "text": "==========================================",
+      "class": "t-muted",
+      "delay": 3250
+    },
+    { "text": "", "class": "", "delay": 3400 },
+    { "text": "$ _", "class": "", "delay": 3600, "cursor": true }
+  ]
+}

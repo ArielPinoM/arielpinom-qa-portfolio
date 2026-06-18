@@ -1,0 +1,28 @@
+{
+  "component": "urban_routes_qa",
+  "id": "TEST-001",
+  "file": "tests/e2e/tests_urban_routes.md",
+  "name": "QA Testing: Aplicación Web y Lógica de Negocio — Urban Routes",
+  "description": "Aseguramiento de Calidad y Pruebas Basadas en Especificaciones",
+  "objective": "Validar la consistencia de la interfaz de usuario en entornos cross-browser, la funcionalidad de reserva de vehículos y la precisión del algoritmo de cálculo de tarifas bajo diferentes variables de tiempo y velocidad.",
+  "problemStatement": "Garantizar que los cálculos matemáticos de las tarifas de viaje se ejecuten sin desviaciones basadas en la hora de salida y la distancia, reduciendo la fricción en flujos críticos como el registro de licencias para mitigar la deserción de usuarios.",
+  "keyLearningsAndAchievements": "Implementación de un ciclo completo de pruebas funcionales y de regresión basadas en especificaciones. Identificación, documentación y reporte formal de 61 defectos en Jira, logrando una trazabilidad absoluta entre el PRD consolidado y las matrices de ejecución.",
+  "abilities": [
+    "Diseño de Casos de Prueba (STLC)",
+    "Pruebas de Regresión",
+    "Listas de Comprobación (Checklists)",
+    "Clases de Equivalencia (EP)",
+    "Análisis de Valores Límite (BVA)"
+  ],
+  "stack": ["Jira", "GitHub", "GitBash", "Markdown"],
+  "status": "passed",
+  "metrics": {
+    "coverage": 86,
+    "tests": 212,
+    "testsRun": 182,
+    "passed": 103,
+    "failures": 61,
+    "skipped": 18
+  },
+  "github": "https://github.com/ArielPinoM/urban-routes-qa-portfolio"
+}
