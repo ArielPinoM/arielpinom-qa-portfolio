@@ -3,7 +3,7 @@ class UrbanRoutesCard extends HTMLElement {
     if (!this._data) {
         // Fallback: carga por su cuenta si no se le inyectaron datos
         try {
-            const res = await fetch('../../../data/projects/urban-routes.json');
+            const res = await fetch('./../../data/projects/urban-routes.json');
         } catch (err) {
             console.log(err)
             return;
