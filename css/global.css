@@ -319,8 +319,7 @@ section { padding: 80px 0;}
 .card-collapsed {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: left;
+  align-items: end;
   padding: 16px;
   cursor: pointer;
   border: 1px solid var(--bg-tertiary);
@@ -345,6 +344,7 @@ section { padding: 80px 0;}
   color: var(--c-passed);
   transition: transform 0.3s;
   flex-shrink: 0;
+  display: inline-block;
 }
 .collapsed-img {
   width: 100%;
@@ -367,6 +367,7 @@ section { padding: 80px 0;}
   font-weight: 600;
   font-size: 17px;
   color: var(--text-primary);
+  width: 100%;
 }
 /* .collapsed-meta {
   display: flex;
@@ -398,6 +399,18 @@ section { padding: 80px 0;}
   grid-template-rows: 1fr;
 }
 .urban-routes-card.expanded .collapsed-img {
+  display: none;
+}
+.urban-grocers-card.expanded {
+  grid-column: 1 / -1 !important;
+}
+.urban-grocers-card.expanded .collapsed-arrow {
+  transform: rotate(90deg);
+}
+.urban-grocers-card.expanded .card-body-wrapper {
+  grid-template-rows: 1fr;
+}
+.urban-grocers-card.expanded .collapsed-img {
   display: none;
 }
 /* Contenido interior - para que no se escape */
@@ -434,25 +447,26 @@ section { padding: 80px 0;}
 .test-card-header {
   background: var(--bg-card);
   padding: 16px 20px;
-  display: flex; 
-  justify-content: space-between; 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   align-items: flex-start;
   border-bottom: 1px solid var(--border-color);
 }
-.test-card-header > div:first-child {
-  width: 50%;
-}
 .test-card-header-secondary {
   display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 16px;
-  width: 50%;
-  /* border:1px red solid; */
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: width .3s ease;
+  z-index: 2;
+}
+.test-card-header-secondary:hover {
+  width: 200%;
 }
 .project-img {
   width: 100%;
+  height: fit-content;
   border-radius: 4px;
   border: 1px solid var(--bg-tertiary);
 }

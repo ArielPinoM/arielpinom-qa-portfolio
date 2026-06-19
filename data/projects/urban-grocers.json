@@ -1,37 +1,38 @@
 {
   "component": "urban_grocers_qa",
   "id": "TEST-002",
-  "file": "PENDING",
-  "name": "PENDING",
-  "description": "Aseguramiento de Calidad y Pruebas Basadas en Especificaciones",
-  "objective": "Validar la consistencia de la interfaz de usuario en entornos cross-browser, la funcionalidad de reserva de vehículos y la precisión del algoritmo de cálculo de tarifas bajo diferentes variables de tiempo y velocidad.",
-  "problemStatement": "Garantizar que los cálculos matemáticos de las tarifas de viaje se ejecuten sin desviaciones basadas en la hora de salida y la distancia, reduciendo la fricción en flujos críticos como el registro de licencias para mitigar la deserción de usuarios.",
-  "keyLearningsAndAchievements": "Implementación de un ciclo completo de pruebas funcionales y de regresión basadas en especificaciones. Identificación, documentación y reporte formal de 61 defectos en Jira, logrando una trazabilidad absoluta entre el PRD consolidado y las matrices de ejecución.",
+  "file": "tests/api/tests_urban_grocers.md",
+  "name": "QA Testing: Validación de Integración y API Testing — Urban Grocers",
+  "description": "Aseguramiento de calidad enfocado en la validación de contratos de API y reglas de negocio del lado del servidor",
+  "objective": "Validar la estabilidad, la consistencia de los contratos HTTP y el cumplimiento estricto de las reglas de negocio en los módulos de gestión de inventario de kits y en el motor analítico de cálculo de tarifas de envío.",
+  "problemStatement": "Garantizar la correcta sanitización y restricción de tipos de datos en el backend para evitar sobrecargas logísticas por exceso de productos únicos, asegurando que las respuestas comerciales del cálculo de entregas mantengan la coherencia con la matriz de tarifas sin generar excepciones del servidor.",
+  "keyLearningsAndAchievements": "Diseño, estructuración y ejecución exhaustiva de una suite de 82 escenarios de prueba a través de Postman. Identificación, aislamiento y documentación individual en Markdown de reportes de defectos críticos bajo el estándar formal de Jira, logrando una trazabilidad absoluta entre los requisitos técnicos del backend, la matriz de pruebas y las evidencias visuales de ejecución.",
   "abilities": [
     {
-      "title": "Competencias de diseño y análisis de pruebas",
+      "title": "Competencias de Análisis y Validación de Negocio",
       "color": "var(--c-passed)",
       "abilities": [
-        "Análisis de Requisitos", "Diseños de Casos de Prueba", "Técnicas de Testing Basadas en Especificaciones", "Equivalence Partitioning (EP)", "Boundary Value Analysis (BVA)", "Definición de Estrategia de Pruebas", "Análisis de Lógica de Negocio", "Trazabilidad y Mapeo de Requisitos"
+        "Validación Lógica de Negocio de Módulos Críticos (gestión de kits y cálculo de entregas)", "Evaluación de reglas de negocio estrictas (límites de productos, factibilidad de entrega, ventanas horarias)", "Enfoque de Pruebas Black-Box para verificar comportamiento sin depender de la implementación interna", "Análisis de Consistencia Lógica en respuestas de la API (isItPossibleToDeliver, Límite de Peso/Cantidad)"
       ]
     },
     {
-      "title": "Competencias de Ejecución y Aseguramiento de Calidad",
+      "title": "Competencias de Diseño de Pruebas y Documentación",
       "color": "var(--c-info)",
       "abilities": [
-        "Pruebas Funcionales Transversales", "Pruebas de Interfaz de Usuario", "Testing de Seguridad y Validación", "Identificación y Reporte de Defectos", "Análisis de Cobertura de Pruebas", "Documentación Técnica Clara"
+        "Diseño de Escenarios Basados en Particiones de Equivalencia y Análisis de Valores Límite", "Construcción de Casos de Prueba para Happy Paths, Boundaries y Fallas", "Documentación Estructurada de Requisitos y Resultados de Prueba", "Trazabilidad y Reporte de Defectos con Evidencia Clara para su Seguimiento"
       ]
     }
   ],
-  "stack": ["Jira", "GitHub", "GitBash", "Markdown"],
+  "stack": ["Postman", "Jira", "GitHub", "GitBash", "Markdown", "HTML"],
   "status": "passed",
   "metrics": {
-    "coverage": 86,
-    "tests": 212,
-    "testsRun": 182,
-    "passed": 103,
-    "failures": 61,
-    "skipped": 18
+    "coverage": 100,
+    "tests": 82,
+    "testsRun": 82,
+    "passed": 31,
+    "failures": 51,
+    "skipped": 0
   },
-  "github": "https://github.com/ArielPinoM/urban-routes-qa-portfolio"
+  "github": "https://github.com/ArielPinoM/urban-grocers-api-testing",
+  "image": "./assets/urban-grocers/urban-grocers-postman.png"
 }

@@ -26,7 +26,7 @@
   "stack": ["Jira", "GitHub", "GitBash", "Markdown"],
   "status": "passed",
   "metrics": {
-    "coverage": 86,
+    "coverage": 90,
     "tests": 212,
     "testsRun": 182,
     "passed": 103,

@@ -1,13 +1,13 @@
 class UrbanGrocersCard extends HTMLElement {
   async connectedCallback() {
     if (!this._data) {
-        // Fallback: carga por su cuenta si no se le inyectaron datos
-        try {
-            const res = await fetch('./data/projects/urban-grocers.json');
-        } catch (err) {
-            console.log(err)
-            return;
-        }
+      // Fallback: carga por su cuenta si no se le inyectaron datos
+      try {
+        const res = await fetch("./data/projects/urban-grocers.json");
+      } catch (err) {
+        console.log(err);
+        return;
+      }
     }
     this.render(this._data);
     this.setupToggle();
@@ -15,32 +15,57 @@ class UrbanGrocersCard extends HTMLElement {
 
   set projectData(data) {
     this._data = data;
-    if(this.isConnected) this.render(data);
+    if (this.isConnected) this.render(data);
   }
 
   render(data) {
-    // Genera el HTML para el header de la suite
-    const suiteHeaderHTML = /*html*/`
-        <div class="suite-header">
-            <div class="suite-header-left">
-                <span style="color:var(--c-passed);">▶</span>
-                <span>test_session :: ${data.component}</span>
+    // Vista colapsada: miniatura + info resumida
+    const collapsedHTML = /*html*/ `
+        <div class="card-collapsed">
+            <div class="card-header">
+                <div>
+                    <span class="collapsed-arrow">▶</span>
+                    <span>test_session :: ${data.component}</span>
+                </div>
+                <span style="color:var(--c-passed);">${data.metrics.tests} tests</span>
             </div>
-            <span style="color:var(--c-passed);">${data.metrics.tests} tests</span>
+            <div>
+                <img class="collapsed-img" src="${data.image || "./assets/urban-routes-app-screenshot.png"}" alt="${data.name}" />
+            </div>
+            <div class="test-id">${data.id} · ${data.file}</div>
+            <div class="collapsed-title">${data.name}</div>
+            <div class="test-description">${data.description}</div>
+            <span class="badge badge-info">[ 🎓 BOOTCAMP ]</span>
         </div>
     `;
 
+    // Genera el HTML para el header de la suite
+    // const suiteHeaderHTML = /*html*/ `
+    //     <div class="suite-header">
+    //         <div class="suite-header-left">
+    //             <span style="color:var(--c-passed);">▶</span>
+    //             <span>test_session :: ${data.component}</span>
+    //         </div>
+    //         <span style="color:var(--c-passed);">${data.metrics.tests} tests</span>
+    //     </div>
+    // `;
+
     // Generar las columnas de habilidades
-    const abilitiesHTML = (data.abilities || []).map(group => {
-        const color = group.color || 'var(--c-info)'; // fallback
-        const listItems = group.abilities.map(ability => `
+    const abilitiesHTML = (data.abilities || [])
+      .map((group) => {
+        const color = group.color || "var(--c-info)"; // fallback
+        const listItems = group.abilities
+          .map(
+            (ability) => `
                 <li class="ability-item">
                     <span class="ability-icon">></span>
                     ${ability}
                 </li>
-            `).join('');
+            `,
+          )
+          .join("");
 
-            return `
+        return `
                 <div class="abilities-col">
                     <div class="abilities-label">
                         <span class="abilities-dot" style="background: ${color}"></span>
@@ -50,29 +75,26 @@ class UrbanGrocersCard extends HTMLElement {
                         ${listItems}
                     </ul>
                 </div>
-            `
-    }).join('');
+            `;
+      })
+      .join("");
 
     // Contenido detallado (métricas, stack, enlaces, habilidades)
-    const detailsHTML = /*html*/`
+    const detailsHTML = /*html*/ `
         <div class="card-body-inner">
             <!-- test-card -->
             <div class="test-card">
                 <div class="test-card-header">
-                    <div>
-                        <div class="test-id">${data.id} · ${data.file}</div>
-                        <div class="test-name">${data.name}</div>
-                        <div class="test-description">${data.description}</div>
+                    <div class="test-card-header-secondary">
+                        <img class="project-img" src="${data.image}" alt="Urban Routes Home Screen">
+                    </div>
+                    <div class="test-card-header-primary">
                         <div class="test-h2">Objetivo</div>
                         <div class="test-description">${data.objective}</div>
                         <div class="test-h2">Problemática</div><div class="test-description">${data.problemStatement}</div>
                         <div class="test-h2">Aprendizajes y Logros</div>
                         <div class="test-description">${data.keyLearningsAndAchievements}</div>
 
-                    </div>
-                    <div class="test-card-header-secondary">
-                        <span class="status-badge badge-info">[ 🎓 BOOTCAMP ]</span>
-                        <img class="project-img" src="./assets/urban-routes/urban-routes-app-screenshot.png" alt="Urban Routes Home Screen">
                     </div>
                 </div>
                 <div class="test-card-body">
@@ -117,7 +139,7 @@ class UrbanGrocersCard extends HTMLElement {
     // Estructura final
     this.innerHTML = /*html*/ `
         <div class="urban-grocers-card">
-            ${suiteHeaderHTML}
+            ${collapsedHTML}
             <div class="card-body-wrapper">
             ${detailsHTML}
             </div>
@@ -125,24 +147,39 @@ class UrbanGrocersCard extends HTMLElement {
     `;
 
     // Aseguramos que el componente tenga la clase base (para el CSS)
-    this.classList.add('urban-grocers-card');
+    this.classList.add("urban-grocers-card");
   }
 
   setupToggle() {
-    const suiteHeader = this.querySelector('.suite-header');
-    if (!suiteHeader) return;
+    // const suiteHeader = this.querySelector('.suite-header');
+    // if (!suiteHeader) return;
 
-    suiteHeader.addEventListener('click', () => {
-        this.classList.toggle('expanded');
+    // suiteHeader.addEventListener('click', () => {
+    //     this.classList.toggle('expanded');
+    // });
+
+    // // Accesibilidad: permite abrir/cerrar con teclado
+    // suiteHeader.setAttribute('tabindex', '0');
+    // suiteHeader.addEventListener('keydown', (e) => {
+    //     if (e.key === 'Enter' || e.key === ' ') {
+    //         e.preventDefault();
+    //         this.classList.toggle('expanded');
+    //     }
+    // });
+    const collapsed = this.querySelector(".card-collapsed");
+    if (!collapsed) return;
+
+    collapsed.addEventListener("click", () => {
+      this.classList.toggle("expanded");
     });
 
-    // Accesibilidad: permite abrir/cerrar con teclado
-    suiteHeader.setAttribute('tabindex', '0');
-    suiteHeader.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            this.classList.toggle('expanded');
-        }
+    // Accesibilidad con teclado
+    collapsed.setAttribute("tabindex", "0");
+    collapsed.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        this.classList.toggle("expanded");
+      }
     });
   }
 }

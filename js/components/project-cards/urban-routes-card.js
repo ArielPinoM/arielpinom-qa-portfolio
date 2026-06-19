@@ -33,11 +33,9 @@ class UrbanRoutesCard extends HTMLElement {
                 <img class="collapsed-img" src="${data.image || "./assets/urban-routes-app-screenshot.png"}" alt="${data.name}" />
             </div>
             <div class="test-id">${data.id} · ${data.file}</div>
-            <div class="collapsed-info">
-                <div class="collapsed-title">${data.name}</div>
-                <span class="badge badge-info"">[ 🎓 BOOTCAMP ]</span>
-            </div>
+            <div class="collapsed-title">${data.name}</div>
             <div class="test-description">${data.description}</div>
+            <span class="badge badge-info">[ 🎓 BOOTCAMP ]</span>
         </div>
     `;
 
@@ -87,16 +85,15 @@ class UrbanRoutesCard extends HTMLElement {
             <!-- test-card -->
             <div class="test-card">
                 <div class="test-card-header">
-                    <div>
+                    <div class="test-card-header-secondary">
+                        <img class="project-img" src="${data.image}" alt="Urban Routes Home Screen">
+                    </div>
+                    <div class="test-card-header-primary">
                         <div class="test-h2">Objetivo</div>
                         <div class="test-description">${data.objective}</div>
                         <div class="test-h2">Problemática</div><div class="test-description">${data.problemStatement}</div>
                         <div class="test-h2">Aprendizajes y Logros</div>
                         <div class="test-description">${data.keyLearningsAndAchievements}</div>
-
-                    </div>
-                    <div class="test-card-header-secondary">
-                        <img class="project-img" src="${data.image}" alt="Urban Routes Home Screen">
                     </div>
                 </div>
                 <div class="test-card-body">
