@@ -1,8 +1,8 @@
 {
-  "component": "urban_routes_qa",
-  "id": "TEST-001",
-  "file": "tests/e2e/tests_urban_routes.md",
-  "name": "QA Testing: Aplicación Web y Lógica de Negocio — Urban Routes",
+  "component": "urban_grocers_qa",
+  "id": "TEST-002",
+  "file": "PENDING",
+  "name": "PENDING",
   "description": "Aseguramiento de Calidad y Pruebas Basadas en Especificaciones",
   "objective": "Validar la consistencia de la interfaz de usuario en entornos cross-browser, la funcionalidad de reserva de vehículos y la precisión del algoritmo de cálculo de tarifas bajo diferentes variables de tiempo y velocidad.",
   "problemStatement": "Garantizar que los cálculos matemáticos de las tarifas de viaje se ejecuten sin desviaciones basadas en la hora de salida y la distancia, reduciendo la fricción en flujos críticos como el registro de licencias para mitigar la deserción de usuarios.",
@@ -33,6 +33,5 @@
     "failures": 61,
     "skipped": 18
   },
-  "github": "https://github.com/ArielPinoM/urban-routes-qa-portfolio",
-  "image": "./assets/urban-routes/urban-routes-app-screenshot.png"
+  "github": "https://github.com/ArielPinoM/urban-routes-qa-portfolio"
 }

@@ -15,7 +15,9 @@ class QAProjectSuite extends HTMLElement {
                 <div class="container">
                     <p class="section-label">suite de pruebas</p>
                     <h2 class="section-title">The Test Suite</h2>
+                    <div class="projects-grid">
                     ${cardsHTML}
+                    </div>
                 </div>
             </section>
         `;

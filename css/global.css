@@ -17,7 +17,7 @@
 
   --text-primary:   #e6edf3;
   --text-secondary: #8b949e;
-  --text-muted:     #484f58;
+  --text-muted:     #646c77;
 
   --border-color:  #30363d;
   --border-active: #3d444d;
@@ -185,6 +185,7 @@ section { padding: 80px 0;}
   border-radius: var(--radius-md);
   border: 1px solid;
   letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 .badge-passed  { color: var(--c-passed); border-color: var(--c-passed); background: var(--c-passed-dim); }
 .badge-info    { color: var(--c-info);   border-color: var(--c-info);   background: var(--c-info-dim); }
@@ -304,6 +305,107 @@ section { padding: 80px 0;}
 /* ===== TEST SUITE / PROJECTS ===== */
 #projects { background: var(--bg-primary); }
 
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  /* margin-top: 32px; */
+  /* border: 1px red solid; */
+}
+
+/* Animación despliegue/compactación tarjetas de proyectos */
+/* Vista colapsada (tarjeta compacta) */
+.card-collapsed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  padding: 16px;
+  cursor: pointer;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  transition: border-color 0.2s, background 0.2s;
+  min-height: 100px;
+}
+.card-collapsed:hover {
+  border-color: var(--border-active);
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.collapsed-arrow {
+  color: var(--c-passed);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.collapsed-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--bg-tertiary);
+  flex-shrink: 0;
+  margin-top: 16px;
+}
+.collapsed-info {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
+  gap: 16px;
+}
+.collapsed-title {
+  font-family: var(--font-);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--text-primary);
+}
+/* .collapsed-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--c-passed);
+  transition: rotate(90deg);
+  width: 100%;
+} */
+/* Contenedor animable */
+.card-body-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+  overflow: hidden;
+}
+/* Cuando esta expandido */
+/* Full-width al expandir (dentro del grid) */
+.urban-routes-card.expanded {
+  grid-column: 1 / -1 !important;
+}
+.urban-routes-card.expanded .collapsed-arrow {
+  transform: rotate(90deg);
+}
+.urban-routes-card.expanded .card-body-wrapper {
+  grid-template-rows: 1fr;
+}
+.urban-routes-card.expanded .collapsed-img {
+  display: none;
+}
+/* Contenido interior - para que no se escape */
+.card-body-inner {
+  overflow: hidden;
+}
+
+/* Suite header clickable */
 .suite-header {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -314,6 +416,9 @@ section { padding: 80px 0;}
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   background: var(--bg-secondary);
   display: flex; justify-content: space-between; align-items: center;
+  /* Clickable */
+  cursor: pointer;
+  user-select: none;
 }
 .suite-header-left { display: flex; align-items: center; gap: 8px; }
 
@@ -336,22 +441,27 @@ section { padding: 80px 0;}
   border-bottom: 1px solid var(--border-color);
 }
 .test-card-header > div:first-child {
-  width: 60%;
+  width: 50%;
 }
 .test-card-header-secondary {
   display: flex;
   flex-direction: column;
   align-items: end;
   gap: 16px;
-  width: 40%;
+  width: 50%;
   /* border:1px red solid; */
 }
-.project-img {width: 100%;}
+.project-img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--bg-tertiary);
+}
 .test-id {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--text-muted);
   margin-bottom: 4px;
+  width: 100%;
 }
 .test-name {
   font-weight: 600;
@@ -366,7 +476,7 @@ section { padding: 80px 0;}
 .test-description {
   font-size: 13px;
   color: var(--text-secondary);
-  max-width: 560px;
+  width: 100%;
   margin-bottom: 2px;
 }
 .status-badge {
@@ -720,6 +830,9 @@ footer {
     margin-top: 8px;
   }
   /* PROJECT CARD */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
   .test-card-header {
     display: grid;
     grid-template-columns: 1fr;
