@@ -8,11 +8,20 @@
   "problemStatement": "Garantizar que los cálculos matemáticos de las tarifas de viaje se ejecuten sin desviaciones basadas en la hora de salida y la distancia, reduciendo la fricción en flujos críticos como el registro de licencias para mitigar la deserción de usuarios.",
   "keyLearningsAndAchievements": "Implementación de un ciclo completo de pruebas funcionales y de regresión basadas en especificaciones. Identificación, documentación y reporte formal de 61 defectos en Jira, logrando una trazabilidad absoluta entre el PRD consolidado y las matrices de ejecución.",
   "abilities": [
-    "Diseño de Casos de Prueba (STLC)",
-    "Pruebas de Regresión",
-    "Listas de Comprobación (Checklists)",
-    "Clases de Equivalencia (EP)",
-    "Análisis de Valores Límite (BVA)"
+    {
+      "title": "Competencias de diseño y análisis de pruebas",
+      "color": "var(--c-passed)",
+      "abilities": [
+        "Análisis de Requisitos", "Diseños de Casos de Prueba", "Técnicas de Testing Basadas en Especificaciones", "Equivalence Partitioning (EP)", "Boundary Value Analysis (BVA)", "Definición de Estrategia de Pruebas", "Análisis de Lógica de Negocio", "Trazabilidad y Mapeo de Requisitos"
+      ]
+    },
+    {
+      "title": "Competencias de Ejecución y Aseguramiento de Calidad",
+      "color": "var(--c-info)",
+      "abilities": [
+        "Pruebas Funcionales Transversales", "Pruebas de Interfaz de Usuario", "Testing de Seguridad y Validación", "Identificación y Reporte de Defectos", "Análisis de Cobertura de Pruebas", "Documentación Técnica Clara"
+      ]
+    }
   ],
   "stack": ["Jira", "GitHub", "GitBash", "Markdown"],
   "status": "passed",

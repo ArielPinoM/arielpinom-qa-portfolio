@@ -18,6 +18,31 @@ class UrbanRoutesCard extends HTMLElement {
   }
 
   render(data) {
+    // Generar las columnas de habilidades
+    const abilitiesHTML = (data.abilities || []).map(group => {
+        const color = group.color || 'var(--c-info)'; // fallback
+        const listItems = group.abilities.map(ability => `
+                <li class="ability-item">
+                    <span class="ability-icon">></span>
+                    ${ability}
+                </li>
+            `).join('');
+
+            return `
+                <div class="abilities-col">
+                    <div class="abilities-label">
+                        <span class="abilities-dot" style="background: ${color}"></span>
+                        ${group.title}
+                    </div>
+                    <ul class="abilities-list">
+                        ${listItems}
+                    </ul>
+                </div>
+            `
+    }).join('');
+
+    // Insertar abilitiesHTML donde corresponda
+
     this.innerHTML = /*html*/ `
     <div class="suite-header">
         <div class="suite-header-left">
@@ -39,7 +64,10 @@ class UrbanRoutesCard extends HTMLElement {
                 <div class="test-description">${data.keyLearningsAndAchievements}</div>
 
             </div>
-            <span class="status-badge badge-info">[ 🎓 BOOTCAMP ]</span>
+            <div class="test-card-header-secondary">
+                <span class="status-badge badge-info">[ 🎓 BOOTCAMP ]</span>
+                <img class="project-img" src="./assets/urban-routes/urban-routes-app-screenshot.png" alt="Urban Routes Home Screen">
+            </div>
         </div>
         <div class="test-card-body">
             <div class="metrics-row">
@@ -63,6 +91,9 @@ class UrbanRoutesCard extends HTMLElement {
                     <div class="metric-val" style="color:var(--c-failed);">${data.metrics.failures}</div>
                     <div class="metric-key">Failures</div>
                 </div>
+            </div>
+            <div class="abilities-row">
+                ${abilitiesHTML}
             </div>
             <div class="test-card-footer">
                 <div class="stack-tags">
