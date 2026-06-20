@@ -1,0 +1,39 @@
+{
+  "component": "urban_lunch_qa",
+  "id": "TEST-003",
+  "file": "tests/mobile/tests_urban_lunch.md",
+  "name": "QA Testing: Validación Funcional y Flujo End-to-End - Urban Lunch [mobile]",
+  "description": "Aseguramiento de calidad enfocado en la validación funcional, experiencia de usuario y robustez del flujo de pedidos",
+  "objective": "Verificar la estabilidad y correctitud del flujo de pedido de extremo a extremo, asegurar la precisión del cálculo de totales y tarifas, validar la sincronización y la experiencia del seguimiento en tiempo real, y confirmar el manejo adecuado de errores (permisos, carrito vacío, condiciones límite) antes del despliegue.",
+  "problemStatement": "Garantizar que la lógica de negocio y la interfaz móvil mantengan consistencia bajo condiciones reales de uso: evitar inconsistencias en el cálculo de costos durante la confirmación, asegurar la fiabilidad del temporizador y el renderizado de rutas en el tracking, y manejar fallos de permisos y estados inválidos sin degradar la experiencia del usuario.",
+  "keyLearningsAndAchievements": "Diseño y ejecución de la batería de pruebas funcionales (39 casos de prueba totales; 35 aprobados, 3 fallos, 1 omitido — 90% progreso) en dispositivos físicos Samsung Galaxy S23+.\nDocumentación estructurada en Markdown y trazabilidad de hallazgos registrada en Jira con pasos de reproducción y evidencias visuales.\nIdentificación y aislamiento de problemas clave en Order Confirmation (algoritmos de suma/validación) y Order Tracking (temporizador y sincronización UI).\nImplementación de flujos de prueba repetibles que permiten regresión rápida tras correcciones.",
+  "abilities": [
+    {
+      "title": "Habilidades de Diseño y Ejecución de Pruebas",
+      "color": "var(--c-passed)",
+      "abilities": [
+        "Validación de Flujos End-to-End", "Verificación de Estados de Selección y Foco en la UI", "Pruebas de Navegación y Comportamientos de Pantallas", "Comprobación de la Lógica de Negocio y Cálculo de Totales", "Pruebas de Actualización Dinámica de Estado (Por Ejemplo, Temporizadores y Transiciones de Pantalla)", "Gestión de Operaciones de Carrito y Contadores de Ítems", "Pruebas de Compatibilidad de Interacción con Listas Largas y Scroll", "Validación de Manejo de Errores y Condiciones Límite"
+      ]
+    },
+    {
+      "title": "Competencias de Aseguramiento de Calidad y Reporte",
+      "color": "var(--c-info)",
+      "abilities": [
+        "Análisis y Documentación de Requerimientos Funcionales", "Creación de Matrices y Suites de Prueba Estructuradas", "Seguimiento de Métricas de Ejecución y Cobertura", "Identificación y Priorización de Defectos", "Evaluación de Riesgos y Recomendaciones de Remediación", "Reporte de Resultados de Pruebas y Conclusiones de Calidad"
+      ]
+    }
+  ],
+  "stack": ["Android Studio", "Jira", "GitHub", "GitBash", "Markdown", "Pruebas en Dispositivos Físicos (Samsung Galaxy S23+)"],
+  "status": "passed",
+  "metrics": {
+    "coverage": 97,
+    "tests": 39,
+    "testsRun": 39,
+    "passed": 35,
+    "failures": 3,
+    "skipped": 1
+  },
+  "github": "https://github.com/ArielPinoM/urban-lunch-qa",
+  "image1": "./assets/urban-lunch/urban-lunch-1.png",
+  "image2": "./assets/urban-lunch/urban-lunch-2.png"
+}

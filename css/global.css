@@ -33,7 +33,7 @@
 }
 
 /* ===== RESET ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; scroll-margin-top: 52px;}
 
 html { scroll-behavior: smooth; }
 
@@ -89,7 +89,7 @@ nav {
 }
 
 /* ===== LAYOUT ===== */
-section { padding: 80px 0;}
+section { padding: 40px 0;}
 .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
 /* ===== SECTION LABELS ===== */
@@ -310,8 +310,6 @@ section { padding: 80px 0;}
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
-  /* margin-top: 32px; */
-  /* border: 1px red solid; */
 }
 
 /* Animación despliegue/compactación tarjetas de proyectos */
@@ -331,6 +329,10 @@ section { padding: 80px 0;}
 .card-collapsed:hover {
   border-color: var(--border-active);
 }
+.card-collapsed>div:nth-child(2){
+  width: 100%;
+  display: flex;
+}
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -348,7 +350,8 @@ section { padding: 80px 0;}
 }
 .collapsed-img {
   width: 100%;
-  object-fit: cover;
+  max-height: 300px;
+  object-fit: contain;
   border-radius: 4px;
   border: 1px solid var(--bg-tertiary);
   flex-shrink: 0;
@@ -369,18 +372,6 @@ section { padding: 80px 0;}
   color: var(--text-primary);
   width: 100%;
 }
-/* .collapsed-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 18px;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  color: var(--c-passed);
-  transition: rotate(90deg);
-  width: 100%;
-} */
-/* Contenedor animable */
 .card-body-wrapper {
   display: grid;
   grid-template-rows: 0fr;
@@ -411,6 +402,18 @@ section { padding: 80px 0;}
   grid-template-rows: 1fr;
 }
 .urban-grocers-card.expanded .collapsed-img {
+  display: none;
+}
+.urban-lunch-card.expanded {
+  grid-column: 1 / -1 !important;
+}
+.urban-lunch-card.expanded .collapsed-arrow {
+  transform: rotate(90deg);
+}
+.urban-lunch-card.expanded .card-body-wrapper {
+  grid-template-rows: 1fr;
+}
+.urban-lunch-card.expanded .collapsed-img {
   display: none;
 }
 /* Contenido interior - para que no se escape */
@@ -456,19 +459,22 @@ section { padding: 80px 0;}
 .test-card-header-secondary {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
-  transition: width .3s ease;
-  z-index: 2;
-}
-.test-card-header-secondary:hover {
-  width: 200%;
+  cursor: pointer;
 }
 .project-img {
+  flex: 1;
+  min-width: 0;
   width: 100%;
-  height: fit-content;
   border-radius: 4px;
   border: 1px solid var(--bg-tertiary);
+  transition: opacity 0.2s;
+  display: block;
+}
+.project-img:hover {
+  opacity: 0.85;
 }
 .test-id {
   font-family: var(--font-mono);
@@ -620,6 +626,46 @@ ul {
 .card-link:hover {
   background: var(--c-info-dim);
   border-color: var(--c-info);
+}
+/* CSS para el overlay que muestra la imagen agrandada de cada tarjeta de proyecto */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 2px solid var(--c-info);
+  border-radius: 4px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.6);
+}
+.lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  padding: 2px;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.lightbox-close:hover {
+  color: var(--c-failed);
+  border-color: var(--c-failed);
 }
 
 /* ===== TOOLKIT ===== */

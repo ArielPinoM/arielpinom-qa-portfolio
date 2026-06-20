@@ -1,8 +1,8 @@
 import { ProjectCard } from "./ProjectCard.js";
 
-class UrbanRoutesCard extends ProjectCard {
+class UrbanLunchCard extends ProjectCard {
   get dataUrl() {
-    return "./data/projects/urban-routes.json";
+    return "./data/projects/urban-lunch.json";
   }
 
   set projectData(data) {
@@ -26,7 +26,7 @@ class UrbanRoutesCard extends ProjectCard {
                 <span style="color:var(--c-passed);">${data.metrics.tests} tests</span>
             </div>
             <div>
-                <img class="collapsed-img" src="${data.image}" alt="${data.name}" />
+                <img class="collapsed-img" src="${data.image1}" alt="${data.name}" />
             </div>
             <div class="test-id">${data.id} · ${data.file}</div>
             <div class="collapsed-title">${data.name}</div>
@@ -35,6 +35,7 @@ class UrbanRoutesCard extends ProjectCard {
         </div>
     `;
 
+    // Generar las columnas de habilidades
     const abilitiesHTML = (data.abilities || [])
       .map((group) => {
         const color = group.color || "var(--c-info)"; // fallback
@@ -70,7 +71,8 @@ class UrbanRoutesCard extends ProjectCard {
             <div class="test-card">
                 <div class="test-card-header">
                     <div class="test-card-header-secondary">
-                        <img class="project-img" src="${data.image}">
+                        <img class="project-img" src="${data.image1}">
+                        <img class="project-img" src="${data.image2}">
                     </div>
                     <div class="test-card-header-primary">
                         <div class="test-h2">Objetivo</div>
@@ -78,6 +80,7 @@ class UrbanRoutesCard extends ProjectCard {
                         <div class="test-h2">Problemática</div><div class="test-description">${data.problemStatement}</div>
                         <div class="test-h2">Aprendizajes y Logros</div>
                         <div class="test-description">${data.keyLearningsAndAchievements}</div>
+
                     </div>
                 </div>
                 <div class="test-card-body">
@@ -121,15 +124,15 @@ class UrbanRoutesCard extends ProjectCard {
 
     // Estructura final
     this.innerHTML = /*html*/ `
-            ${collapsedHTML}
-            <div class="card-body-wrapper">
-            ${detailsHTML}
-            </div>
+        ${collapsedHTML}
+        <div class="card-body-wrapper">
+        ${detailsHTML}
+        </div>
     `;
 
     // Aseguramos que el componente tenga la clase base (para el CSS)
-    this.classList.add("urban-routes-card");
+    this.classList.add("urban-lunch-card");
   }
 }
 
-customElements.define("urban-routes-card", UrbanRoutesCard);
+customElements.define("urban-lunch-card", UrbanLunchCard);

@@ -1,21 +1,17 @@
-class UrbanGrocersCard extends HTMLElement {
-  async connectedCallback() {
-    if (!this._data) {
-      // Fallback: carga por su cuenta si no se le inyectaron datos
-      try {
-        const res = await fetch("./data/projects/urban-grocers.json");
-      } catch (err) {
-        console.log(err);
-        return;
-      }
-    }
-    this.render(this._data);
-    this.setupToggle();
+import { ProjectCard } from "./ProjectCard.js";
+
+class UrbanGrocersCard extends ProjectCard {
+  get dataUrl() {
+    return "./data/projects/urban-grocers.json";
   }
 
   set projectData(data) {
     this._data = data;
-    if (this.isConnected) this.render(data);
+    if (this.isConnected) {
+      this.render(data);
+      this.setupToggle();
+      this.setupLightbox();
+    }
   }
 
   render(data) {
@@ -30,7 +26,7 @@ class UrbanGrocersCard extends HTMLElement {
                 <span style="color:var(--c-passed);">${data.metrics.tests} tests</span>
             </div>
             <div>
-                <img class="collapsed-img" src="${data.image || "./assets/urban-routes-app-screenshot.png"}" alt="${data.name}" />
+                <img class="collapsed-img" src="${data.image}" alt="${data.name}" />
             </div>
             <div class="test-id">${data.id} · ${data.file}</div>
             <div class="collapsed-title">${data.name}</div>
@@ -38,17 +34,6 @@ class UrbanGrocersCard extends HTMLElement {
             <span class="badge badge-info">[ 🎓 BOOTCAMP ]</span>
         </div>
     `;
-
-    // Genera el HTML para el header de la suite
-    // const suiteHeaderHTML = /*html*/ `
-    //     <div class="suite-header">
-    //         <div class="suite-header-left">
-    //             <span style="color:var(--c-passed);">▶</span>
-    //             <span>test_session :: ${data.component}</span>
-    //         </div>
-    //         <span style="color:var(--c-passed);">${data.metrics.tests} tests</span>
-    //     </div>
-    // `;
 
     // Generar las columnas de habilidades
     const abilitiesHTML = (data.abilities || [])
@@ -86,7 +71,7 @@ class UrbanGrocersCard extends HTMLElement {
             <div class="test-card">
                 <div class="test-card-header">
                     <div class="test-card-header-secondary">
-                        <img class="project-img" src="${data.image}" alt="Urban Routes Home Screen">
+                        <img class="project-img" src="${data.image}">
                     </div>
                     <div class="test-card-header-primary">
                         <div class="test-h2">Objetivo</div>
@@ -138,49 +123,14 @@ class UrbanGrocersCard extends HTMLElement {
 
     // Estructura final
     this.innerHTML = /*html*/ `
-        <div class="urban-grocers-card">
-            ${collapsedHTML}
-            <div class="card-body-wrapper">
-            ${detailsHTML}
-            </div>
+        ${collapsedHTML}
+        <div class="card-body-wrapper">
+        ${detailsHTML}
         </div>
     `;
 
     // Aseguramos que el componente tenga la clase base (para el CSS)
     this.classList.add("urban-grocers-card");
-  }
-
-  setupToggle() {
-    // const suiteHeader = this.querySelector('.suite-header');
-    // if (!suiteHeader) return;
-
-    // suiteHeader.addEventListener('click', () => {
-    //     this.classList.toggle('expanded');
-    // });
-
-    // // Accesibilidad: permite abrir/cerrar con teclado
-    // suiteHeader.setAttribute('tabindex', '0');
-    // suiteHeader.addEventListener('keydown', (e) => {
-    //     if (e.key === 'Enter' || e.key === ' ') {
-    //         e.preventDefault();
-    //         this.classList.toggle('expanded');
-    //     }
-    // });
-    const collapsed = this.querySelector(".card-collapsed");
-    if (!collapsed) return;
-
-    collapsed.addEventListener("click", () => {
-      this.classList.toggle("expanded");
-    });
-
-    // Accesibilidad con teclado
-    collapsed.setAttribute("tabindex", "0");
-    collapsed.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        this.classList.toggle("expanded");
-      }
-    });
   }
 }
 

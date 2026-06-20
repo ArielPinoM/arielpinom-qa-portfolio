@@ -1,6 +1,7 @@
 // Tarjetas de proyectos
 import './components/project-cards/urban-routes-card.js';
 import './components/project-cards/urban-grocers-card.js';
+import './components/project-cards/urban-lunch-card.js';
 
 // Contenedor de proyectos
 import './components/qa-project-suite.js';
