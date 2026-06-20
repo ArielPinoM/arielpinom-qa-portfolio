@@ -1,0 +1,47 @@
+{
+  "component": "chicago_taxi_qa",
+  "id": "TEST-004",
+  "file": "tests/db/chicago-taxi-validation-suite.sql",
+  "name": "Sistema - Chicago Taxi — Suite de Análisis de Logs y Validación de Datos",
+  "description": "Suite automatizada de validación de datos que combina análisis de logs (bash/grep) y queries SQL",
+  "objective": "Automatizar extracción de logs específicos por patrones de red (IP filtering) y códigos de error HTTP. Validar integridad de datos transaccionales: contar vehículos, identificar compañías con cobertura insuficiente. Construir hipótesis sobre bugs del sistema mediante análisis de datos: discrepancias de ganancia, cálculo erróneo de coeficientes climáticos. Demostrar capacidad de root-cause analysis mediante transformación de datos no estructurados (logs) en datasets validables.",
+  "problemStatement": "Logs con miles de registros en servidor remoto (logs/2019/12/). Necesidad de filtrado: direcciones IP que comienzan con patrón específico (233.201.*). Base de datos con 5,500 vehículos registrados, pero plan operativo original preveía 10,550 (discrepancia del 47%). Hipótesis no validada: el sistema calculaba coeficiente de costo basado en clima (Good=1x, Bad=2x), pero reportes de clientes indicaban discrepancias.",
+  "keyLearningsAndAchievements": "Implementé regex con lookahead negativo ((^|[^\\.])233\\.201). Estructuré un pipeline de filtrado en capas: logs brutos → filtro temporal → filtro por código de error → archivos segregados por tipo de fallo. Identifiqué que la flota real (5,500) está 47% por debajo de la capacidad planificada. Utilicé GROUP BY + HAVING para clasificar 51 compañías con <100 vehículos, sugiriendo consolidación de operadores o reasignación de recursos. Validé la hipótesis del coeficiente climático mediante CASE statements que clasificaban condiciones meteorológicas automáticamente (detección de \"rain\" y \"storm\" en descripción). Desglosé viajes por compañía en fecha específica (15-16 nov 2017), demostrando que Flash Cab lideró con 19,558 viajes (2.5x más que la mediana), indicando posible concentración de demanda o data de entrada duplicada.",
+  "abilities": [
+    {
+      "title": "Competencias Técnicas / Hard Skills",
+      "color": "var(--c-passed)",
+      "abilities": [
+        "Expresiones regulares avanzadas (lookahead negativo, character classes, quantifiers).",
+        "Funciones de agregación SQL (COUNT DISTINCT, GROUP BY, HAVING, COUNT with JOINs).",
+        "Operadores SQL condicionales (CASE/WHEN para clasificación de datos).",
+        "JOIN operations (INNER, LEFT JOIN con múltiples condiciones).",
+        "Command-line scripting y redirección de streams (pipes, output redirection >).",
+        "Filtering y pattern matching en logs."
+      ]
+    },
+    {
+      "title": "Competencias Metodológicas / Soft Skills",
+      "color": "var(--c-info)",
+      "abilities": [
+        "Análisis de hipótesis: validación de bugs a través de datos (coeficientes de costo, discrepancias de ganancia).",
+        "Pensamiento crítico de caja negra: deducir comportamiento incorrecto del sistema desde síntomas reportados (quejas de clientes → análisis de cobertura de flota).",
+        "Comunicación técnica: traducción de queries SQL en hallazgos accionables para desarrollo.",
+        "Diseño de tests de datos: estructuración de validaciones que pueden ejecutarse periódicamente para detectar regresiones."
+      ]
+    }
+  ],
+  "stack": ["Bash", "SQL", "Jira", "grep", "psql", "GitHub", "GitBash"],
+  "status": "passed",
+  "metrics": {
+    "coverage": 100,
+    "tests": 6,
+    "testsRun": 6,
+    "passed": 6,
+    "failures": 0,
+    "skipped": 0
+  },
+  "github": "https://github.com/ArielPinoM/chicago-taxi-qa",
+  "image1": "./assets/chicago-taxi/chicago-taxi-1.png",
+  "image2": "./assets/chicago-taxi/chicago-taxi-2.png"
+}
