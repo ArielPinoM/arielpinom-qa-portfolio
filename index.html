@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./css/components/qa-hero.css">
   <link rel="stylesheet" href="./css/components/qa-stats.css">
   <link rel="stylesheet" href="./css/components/qa-project-suite.css">
-  <link rel="stylesheet" href="./css/components/toolkit.css">
+  <link rel="stylesheet" href="./css/components/qa-toolkit.css">
   <link rel="stylesheet" href="./css/components/contact.css">
 </head>
 <body>
@@ -35,131 +35,7 @@
 <hr class="divider">
 
 <!-- TOOLKIT -->
-<section id="toolkit">
-  <div class="container">
-    <p class="section-label">habilidades técnicas</p>
-    <h2 class="section-title">The Toolkit</h2>
-    <div class="toolkit-grid">
-
-      <div class="toolkit-quadrant">
-        <div class="toolkit-quadrant-title">
-          <span class="q-dot" style="background:var(--c-passed)"></span>
-          <span style="color:var(--c-passed)">Pruebas Funcionales</span>
-        </div>
-        <ul class="skill-list">
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Diseño de casos de prueba</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Criterios de aceptación (BDD)</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Análisis de requisitos</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Reporte de defectos (Jira)</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="toolkit-quadrant">
-        <div class="toolkit-quadrant-title">
-          <span class="q-dot" style="background:var(--c-info)"></span>
-          <span style="color:var(--c-info)">Pruebas de API</span>
-        </div>
-        <ul class="skill-list">
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Python requests</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Postman / Newman</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Validación JSON Schema</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">REST / HTTP status codes</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="toolkit-quadrant">
-        <div class="toolkit-quadrant-title">
-          <span class="q-dot" style="background:var(--c-flaky)"></span>
-          <span style="color:var(--c-flaky)">Automatización UI</span>
-        </div>
-        <ul class="skill-list">
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Selenium WebDriver</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:76%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Page Object Model</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">pytest / fixtures</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Playwright (en progreso)</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:45%"></div></div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="toolkit-quadrant">
-        <div class="toolkit-quadrant-title">
-          <span class="q-dot" style="background:var(--text-muted)"></span>
-          <span style="color:var(--text-secondary)">Herramientas & Entorno</span>
-        </div>
-        <ul class="skill-list">
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Git / GitHub</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">GitHub Actions (CI)</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">PostgreSQL / SQL</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span class="skill-icon">›</span>
-            <span class="skill-name">Linux / bash scripting</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
+<qa-toolkit></qa-toolkit>
 
 <hr class="divider">
 
@@ -279,8 +155,6 @@ const barObserver = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
-
-barObserver.observe(document.getElementById('toolkit'));
 </script>
 </body>
 </html>

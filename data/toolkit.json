@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "id": "functional",
+      "title": "Pruebas Funcionales",
+      "color": "--c-passed",
+      "items": [
+        { "name": "Diseño de casos de prueba"},
+        { "name": "Criterios de aceptación (BDD)"},
+        { "name": "Análisis de requisitos"},
+        { "name": "Reporte de defectos (Jira)"}
+      ]
+    },
+    {
+      "id": "api",
+      "title": "Pruebas de API",
+      "color": "--c-info",
+      "items": [
+        { "name": "Python requests"},
+        { "name": "Postman"},
+        { "name": "Validación JSON Schema"},
+        { "name": "REST / HTTP status codes" }
+      ]
+    },
+    {
+      "id": "ui",
+      "title": "Automatización UI",
+      "color": "--c-flaky",
+      "items": [
+        { "name": "Selenium WebDriver" },
+        { "name": "Page Object Model" },
+        { "name": "pytest / fixtures" }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Herramientas & Entorno",
+      "color": "--text-muted",
+      "items": [
+        { "name": "Git / GitHub" },
+        { "name": "GitHub Actions (CI)" },
+        { "name": "PostgreSQL / SQL" },
+        { "name": "Linux / bash scripting" }
+      ]
+    }
+  ]
+}

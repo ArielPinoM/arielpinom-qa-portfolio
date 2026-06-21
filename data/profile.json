@@ -19,7 +19,7 @@
       "delay": 1100
     },
     {
-      "text": "  [NAME]        Ariel          PASS",
+      "text": "  [NAME]        Ariel Pino          PASS",
       "class": "t-pass",
       "delay": 1400
     },
@@ -29,17 +29,17 @@
       "delay": 1650
     },
     {
-      "text": "  [LANG]        Python 3.12    PASS",
+      "text": "  [LANG]        Python    PASS",
       "class": "t-pass",
       "delay": 1900
     },
     {
-      "text": "  [FRAMEWORK]   pytest 8.x     PASS",
+      "text": "  [FRAMEWORK]   pytest     PASS",
       "class": "t-pass",
       "delay": 2150
     },
     {
-      "text": "  [AUTOMATION]  Selenium 4.x   PASS",
+      "text": "  [AUTOMATION]  Selenium   PASS",
       "class": "t-pass",
       "delay": 2400
     },
@@ -55,7 +55,7 @@
       "delay": 3000
     },
     {
-      "text": "92 passed, 0 failed, 0 errors  (3.27s)",
+      "text": "92 passed, 0 failed, 0 errors",
       "class": "t-pass",
       "delay": 3200
     },

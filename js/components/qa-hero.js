@@ -1,10 +1,10 @@
-import { getProfile } from "../data-service.js";
+import { getProfile, getProjects } from "../data-service.js";
 
 class QAHero extends HTMLElement {
   async connectedCallback() {
-    const profileData = await getProfile();
-    this.render(profileData);
-    this.startTerminal(profileData.terminalLines || []);
+        const profileData = await getProfile();
+        this.render(profileData);
+        await this.startTerminal(profileData.terminalLines || []);
   }
 
   render(profileData) {
@@ -53,9 +53,26 @@ class QAHero extends HTMLElement {
         `;
   }
 
-  startTerminal(lines) {
+  async startTerminal(lines) {
     const output = this.querySelector("#terminal-output");
     if(!output) return;
+
+        // Calcula totales a partir de proyectos
+        let totals = { passed: 0, failed: 0, skipped: 0 };
+        let totalTests = 0;
+        try {
+            const projects = await getProjects();
+            totals = projects.reduce((acc, p) => {
+                const m = p.metrics || {};
+                acc.passed += m.passed || 0;
+                acc.failed += m.failures || 0;
+                acc.skipped += (m.skipped ?? m.omitted ?? 0);
+                return acc;
+            }, totals);
+            totalTests = projects.reduce((sum, p) => sum + (p.metrics?.testsRun ?? p.metrics?.tests ?? 0), 0);
+        } catch (e) {
+            // ignore, keep defaults
+        }
 
     // Limpia cualquier contenido previo
     output.innerHTML = '';
@@ -69,7 +86,16 @@ class QAHero extends HTMLElement {
             } else if (text ==='') {
                 line.innerHTML = '&nbsp;'; // Espacio para líneas vacías
             } else {
-                line.textContent = text;
+                // Reemplaza la línea estática de summary por los totales dinámicos
+                const summaryRegex = /passed,?\s*\d+\s*failed/i;
+                const collectedRegex = /collected\s*\d+\s*items/i;
+                if (typeof text === 'string' && summaryRegex.test(text)) {
+                    line.textContent = `${totals.passed} passed, ${totals.failed} failed, ${totals.skipped} skipped`;
+                } else if (typeof text === 'string' && collectedRegex.test(text)) {
+                    line.textContent = `collected ${totalTests} items`;
+                } else {
+                    line.textContent = text;
+                }
             }
             output.appendChild(line);
             output.scrollTop = output.scrollHeight; // Auto-scroll

@@ -5,6 +5,9 @@ let statsData = null;
 let cachedProjects = null;
 let urbanRoutesData = null;
 
+// Toolkit
+let cachedToolkit = null;
+
 /**
  * Obtiene los enlaces sociales desde social.json.
  * Los almacena en caché para no hacer múltiples fetch.
@@ -69,5 +72,18 @@ export async function getProjects() {
   } catch (error) {
     console.error("Error cargando proyectos:", error)
     return [];
+  }
+}
+
+export async function getToolkit() {
+  if (cachedToolkit) return cachedToolkit;
+  try {
+    const res = await fetch('./data/toolkit.json');
+    if (!res.ok) throw new Error(`Error ${res.status}`);
+    cachedToolkit = await res.json();
+    return cachedToolkit;
+  } catch (error) {
+    console.error('No se pudo cargar toolkit:', error);
+    return { groups: [] };
   }
 }

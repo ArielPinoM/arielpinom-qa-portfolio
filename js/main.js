@@ -13,3 +13,4 @@ import './components/qa-project-suite.js';
 import './components/qa-nav.js';
 import './components/qa-hero.js';
 import './components/qa-stats.js';
+import './components/qa-toolkit.js';
