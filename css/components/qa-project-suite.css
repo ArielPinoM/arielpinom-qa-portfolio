@@ -84,28 +84,32 @@
 .urban-routes-card.expanded,
 .urban-grocers-card.expanded,
 .urban-lunch-card.expanded,
-.chicago-taxi-card.expanded {
+.chicago-taxi-card.expanded,
+.urban-grocers-automated-card.expanded {
   grid-column: 1 / -1 !important;
 }
 
 .urban-routes-card.expanded .collapsed-arrow,
 .urban-grocers-card.expanded .collapsed-arrow,
 .urban-lunch-card.expanded .collapsed-arrow,
-.chicago-taxi-card.expanded .collapsed-arrow {
+.chicago-taxi-card.expanded .collapsed-arrow,
+.urban-grocers-automated-card.expanded .collapsed-arrow {
   transform: rotate(90deg);
 }
 
 .urban-routes-card.expanded .card-body-wrapper,
 .urban-grocers-card.expanded .card-body-wrapper,
 .urban-lunch-card.expanded .card-body-wrapper,
-.chicago-taxi-card.expanded .card-body-wrapper {
+.chicago-taxi-card.expanded .card-body-wrapper,
+.urban-grocers-automated-card.expanded .card-body-wrapper {
   grid-template-rows: 1fr;
 }
 
 .urban-routes-card.expanded .collapsed-img,
 .urban-grocers-card.expanded .collapsed-img,
 .urban-lunch-card.expanded .collapsed-img,
-.chicago-taxi-card.expanded .collapsed-img {
+.chicago-taxi-card.expanded .collapsed-img,
+.urban-grocers-automated-card.expanded .collapsed-img {
   display: none;
 }
 

@@ -1,0 +1,38 @@
+{
+  "component": "urban_routes_automated",
+  "id": "TEST-006",
+  "file": "tests/test_urban_routes.py",
+  "name": "Suite Automatizada de Pruebas — Urban Routes ",
+  "description": "Suite pruebas automatizadas → flujo completo reserva taxi con validaciones SMS, pago, extras.",
+  "objective": "Garantizar calidad funcional de la app cubriendo escenarios críticos: ingreso direcciones → selección transporte → confirmación teléfono → pago → reserva. Automatizar validación end-to-end para reducir regresiones manuales.",
+  "problemStatement": "Validación manual flujo taxi = lento, repetitivo, propenso errores. Código SMS dinámico requiere extracción logs network. Múltiples campos, modales, estados → complejidad. Necesidad arquitectura mantenible (POM) para escalabilidad tests.",
+  "keyLearningsAndAchievements": "Implementación exitosa de Page Object Model para desacoplar selectores de la lógica de pruebas. Dominio de extracción de datos desde logs de performance de Chrome para recuperar códigos SMS dinámicos. Uso efectivo de WebDriverWait para sincronización confiable de elementos dinámicos. Cobertura completa de flujo end-to-end: direcciones, tipos de vehículo, tarifas, confirmación telefónica con SMS, pago con tarjeta, selección de extras y validación de modal de búsqueda de auto. Suite de pruebas funcionales que reproduce comportamientos críticos del usuario.",
+  "abilities": [
+    {
+      "title": "Automatización & QA",
+      "color": "var(--c-passed)",
+      "abilities": [
+        "Diseño de arquitecturas test (POM)", "Sincronización de elementos dinámicos (WebDriverWait)", "Validación de Flujos Completos End-to-End"
+      ]
+    },
+    {
+      "title": "Dev & Herramientas",
+      "color": "var(--c-info)",
+      "abilities": [
+        "Python fn avanzadas", "Selenium interacciones complejas (ActionChains, keys)", "Localizadores XPath/CSS"
+      ]
+    }
+  ],
+  "stack": ["Python", "Selenium", "PyTest", "Chrome DevTools", "XPath", "CSS selectors", "GitHub", "GitBash"],
+  "status": "passed",
+  "metrics": {
+    "coverage": 100,
+    "tests": 30,
+    "testsRun": 30,
+    "passed": 27,
+    "failures": 3,
+    "skipped": 0
+  },
+  "github": "https://github.com/ArielPinoM/urban-grocers-automated-api-testing",
+  "image": "./assets/urban-grocers-automated/urban-grocers-test-session.png"
+}

@@ -2,5 +2,6 @@
     {"id": "urban-routes", "component": "urban-routes-card"},
     {"id": "urban-grocers", "component": "urban-grocers-card"},
     {"id": "urban-lunch", "component": "urban-lunch-card"},
-    {"id": "chicago-taxi", "component": "chicago-taxi-card"}
+    {"id": "chicago-taxi", "component": "chicago-taxi-card"},
+    {"id": "urban-grocers-automated", "component": "urban-grocers-automated-card"}
 ]

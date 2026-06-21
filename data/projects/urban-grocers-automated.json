@@ -1,0 +1,38 @@
+{
+  "component": "urban_grocers_automated",
+  "id": "TEST-005",
+  "file": "tests/test_user_kit_creation.py",
+  "name": "Suite Automatizada de Pruebas API — Urban Grocers ",
+  "description": "Valida endpoints, flujos clave y contratos; detecta regresiones temprano.",
+  "objective": "Construir una suite de tests automatizados que valide endpoints y flujos críticos del backend, detecte regresiones temprano y facilite despliegues seguros mediante pruebas reproducibles.",
+  "problemStatement": "Pruebas manuales lentas y propensas a error → regresiones en producción, cobertura inconsistente y verificación manual que frena despliegues.",
+  "keyLearningsAndAchievements": "[Logros] Diseño de cliente HTTP reutilizable (BaseClient), generadores de datos y pruebas organizadas con pytest → pruebas reproducibles y detección temprana de fallos. [Aprendizajes] Buen manejo de sesiones/headers, uso de aserciones explícitas para validar responses, estructura de tests parametrizables y separación clara entre cliente, clientes específicos (user_client, kit_client) y generación de datos.",
+  "abilities": [
+    {
+      "title": "Testing & QA",
+      "color": "var(--c-passed)",
+      "abilities": [
+        "Diseño de casos", "Parametrización", "Fixtures", "Validación de Respuestas", "Manejo de Datos de Prueba"
+      ]
+    },
+    {
+      "title": "Ingeniería de Calidad",
+      "color": "var(--c-info)",
+      "abilities": [
+        "Diseño Modular", "Manejo de Sesiones HTTP y Timeouts", "Logging y Trazabilidad", "Manejo de Errores y Aserciones Robustas"
+      ]
+    }
+  ],
+  "stack": ["Python", "Requests", "PyTest", "Logging", "Typing", "GitHub", "GitBash"],
+  "status": "passed",
+  "metrics": {
+    "coverage": 100,
+    "tests": 9,
+    "testsRun": 9,
+    "passed": 5,
+    "failures": 4,
+    "skipped": 0
+  },
+  "github": "https://github.com/ArielPinoM/urban-grocers-automated-api-testing",
+  "image": "./assets/urban-grocers-automated/urban-grocers-test-session.png"
+}
