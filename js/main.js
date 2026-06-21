@@ -14,3 +14,5 @@ import './components/qa-nav.js';
 import './components/qa-hero.js';
 import './components/qa-stats.js';
 import './components/qa-toolkit.js';
+import './components/qa-contact.js';
+import './components/qa-footer.js';

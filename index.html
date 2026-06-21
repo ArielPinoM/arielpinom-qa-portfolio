@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="./css/components/qa-stats.css">
   <link rel="stylesheet" href="./css/components/qa-project-suite.css">
   <link rel="stylesheet" href="./css/components/qa-toolkit.css">
-  <link rel="stylesheet" href="./css/components/contact.css">
+  <link rel="stylesheet" href="./css/components/qa-contact.css">
+  <link rel="stylesheet" href="./css/components/qa-footer.css">
 </head>
 <body>
 
@@ -39,122 +40,11 @@
 
 <hr class="divider">
 
-<!-- CONTACT / BUG REPORT -->
-<section id="contact">
-  <div class="container">
-    <p class="section-label">formulario de contacto</p>
-    <h2 class="section-title">Abrir un Issue</h2>
+<qa-contact></qa-contact>
 
-    <div class="issue-form">
-      <div class="issue-form-header">
-        <span style="color:var(--c-passed)">●</span>
-        <span>New Issue</span>
-        <span class="issue-num">#new</span>
-        <span style="margin-left:auto; color:var(--text-muted)">ariel-portfolio / contact.yml</span>
-      </div>
-      <div class="issue-form-body">
-
-        <div class="form-group">
-          <label class="form-label">Summary / Asunto <span class="required">*</span></label>
-          <input class="form-input" type="text" placeholder="ej: Oferta para posición QA Automation · ACME Corp">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Issue Type / Severidad <span class="required">*</span></label>
-          <div class="severity-group">
-            <div>
-              <input type="radio" name="severity" id="sev-job" class="severity-opt" checked>
-              <label for="sev-job" class="severity-label">
-                <span class="severity-tag">💼 Oferta laboral</span>
-                <span>Reclutamiento o vacante</span>
-              </label>
-            </div>
-            <div>
-              <input type="radio" name="severity" id="sev-tech" class="severity-opt">
-              <label for="sev-tech" class="severity-label">
-                <span class="severity-tag">🔧 Duda técnica</span>
-                <span>Sobre el código o proyectos</span>
-              </label>
-            </div>
-            <div>
-              <input type="radio" name="severity" id="sev-biz" class="severity-opt">
-              <label for="sev-biz" class="severity-label">
-                <span class="severity-tag">🤝 Colaboración</span>
-                <span>Proyecto o freelance</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Reporter / Tu nombre <span class="required">*</span></label>
-          <input class="form-input" type="text" placeholder="Tu nombre completo">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Assignee Email <span class="required">*</span></label>
-          <input class="form-input" type="email" placeholder="tu@empresa.com">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Steps to Reproduce / Mensaje <span class="required">*</span></label>
-          <textarea class="form-textarea" placeholder="Describe el contexto, la oportunidad o tu consulta con el mayor detalle posible..."></textarea>
-        </div>
-
-      </div>
-      <div class="form-footer">
-        <span class="form-hint">
-          <span style="color:var(--c-flaky)">~</span>
-          Respuesta en &lt; 48h · Estado: <span style="color:var(--c-passed)">OPEN</span>
-        </span>
-        <button class="btn-submit">→ Submit Issue</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-status">
-        <div class="footer-dot"></div>
-        <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted)">
-          All systems operational · v1.0.0-rc
-        </span>
-      </div>
-      <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted)">
-        Ariel · QA Engineer · 2025
-      </span>
-      <div style="display:flex; gap:16px;">
-        <a href="https://github.com" style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted)">GitHub ↗</a>
-        <a href="https://linkedin.com" style="font-family:var(--font-mono); font-size:11px; color:var(--text-muted)">LinkedIn ↗</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<qa-footer></qa-footer>
 
 <!-- Script para cargar los componentes -->
 <script type="module" src="./js/main.js"></script>
-<script>
-/* ===== SKILL BAR ANIMATION ===== */
-const barObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.skill-bar').forEach((bar, i) => {
-        const w = bar.style.width;
-        bar.style.width = '100%';
-        bar.style.transformOrigin = 'left';
-        bar.style.transform = 'scaleX(0)';
-        setTimeout(() => {
-          bar.style.transition = `transform 0.7s cubic-bezier(0.4,0,0.2,1) ${i * 80}ms`;
-          bar.style.transform = `scaleX(${parseFloat(w) / 100})`;
-        }, 100);
-      });
-      barObserver.disconnect();
-    }
-  });
-}, { threshold: 0.2 });
-</script>
 </body>
 </html>
