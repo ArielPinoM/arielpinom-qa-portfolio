@@ -73,6 +73,12 @@
     border-radius: 4px;
     overflow: hidden;
 }
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
 .about-text-bar {
     background: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
