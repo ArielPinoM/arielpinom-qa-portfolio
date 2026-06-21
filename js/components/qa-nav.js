@@ -23,6 +23,7 @@ class QANav extends HTMLElement {
             
             <!-- Links de navegación -->
             <ul class="nav-links">
+                <li><a href="#about">about</a></li>
                 <li><a href="#projects">test_suite</a></li>
                 <li><a href="#toolkit">toolkit</a></li>
                 <li><a href="#contact">open_issue</a></li>

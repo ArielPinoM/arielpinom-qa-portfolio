@@ -69,7 +69,7 @@ class QAHero extends HTMLElement {
                 acc.skipped += (m.skipped ?? m.omitted ?? 0);
                 return acc;
             }, totals);
-            totalTests = projects.reduce((sum, p) => sum + (p.metrics?.testsRun ?? p.metrics?.tests ?? 0), 0);
+            totalTests = projects.reduce((sum, p) => sum + (p.metrics?.tests ?? p.metrics?.tests ?? 0), 0);
         } catch (e) {
             // ignore, keep defaults
         }

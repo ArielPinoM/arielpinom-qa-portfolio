@@ -1,6 +1,12 @@
 {
   "name": "Ariel Pino",
+  "location": "📍 Mérida, MX",
   "role": "Quality Assurance Engineer",
+  "about": [
+    "Egresado de <strong>Ingeniería en Sistemas</strong> con orientación hacia la <span class=\"kw\">calidad de software</span>, la <span class=\"kw\">automatización</span> y la optimización de procesos. Enfoque metodológico centrado en el análisis riguroso de especificaciones y técnicas de <span class=\"kw-b\">diseño de pruebas de caja negra</span> para garantizar que la lógica de negocio cumpla los <strong>criterios de aceptación</strong> establecidos.",
+    "Me motiva resolver problemas complejos mediante el <strong>pensamiento lógico</strong> y la estructuración de datos. Encuentro gran satisfacción en descubrir atajos de <span class=\"kw\">automatización</span>, diseñar <span class=\"kw-b\">matrices de prueba exhaustivas</span> y aplicar la disciplina del entrenamiento de alto rendimiento en resultados técnicos <span class=\"kw-y\">consistentes</span>.",
+    "Priorizo la <strong>comunicación clara, directa y transparente</strong>, fundamentada en evidencias concretas. Aspiro a integrarme en equipos dinámicos donde pueda desplegar mis conocimientos en <span class=\"kw-b\">metodologías de pruebas</span> con fuerte motivación hacia <span class=\"kw\">pruebas automatizadas</span> que impulsen la eficiencia del software."
+  ],
   "specialties": "Automation · Python · PyTest · Selenium",
   "badges": [
     { "text": "✓ PASSED: Automation", "type": "passed" },

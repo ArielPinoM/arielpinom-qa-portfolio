@@ -12,6 +12,7 @@ import './components/qa-project-suite.js';
 // Resto de componentes
 import './components/qa-nav.js';
 import './components/qa-hero.js';
+import './components/qa-about.js';
 import './components/qa-stats.js';
 import './components/qa-toolkit.js';
 import './components/qa-contact.js';

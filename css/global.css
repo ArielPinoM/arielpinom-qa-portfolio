@@ -15,6 +15,8 @@
   --c-flaky-dim:  rgba(241,196,15,0.12);
   --c-info-dim:   rgba(52,152,219,0.12);
 
+  --t3: #484f58;
+
   --text-primary:   #e6edf3;
   --text-secondary: #8b949e;
   --text-muted:     #646c77;
@@ -30,10 +32,12 @@
   --radius-lg: 6px;
 
   --transition: 120ms ease;
+
+  --nav-height: 52px;
 }
 
 /* ===== RESET ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; scroll-margin-top: 52px;}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; scroll-margin-top: var(--nav-height);}
 
 html { scroll-behavior: smooth; }
 
