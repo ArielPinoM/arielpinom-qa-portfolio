@@ -50,6 +50,46 @@ class QAAbout extends HTMLElement {
                                 ${aboutParagraphs}
                             </div>
                         </div>
+                        <div class="sidebar">
+                        <div class="goal-badge">
+                            <span class="gl">TARGET_ROLE =</span>
+                            "QA Engineer Junior"<br>
+                            <span style="color:var(--t3)">sector =</span> <span style="color:var(--c-info)">any_tech</span><br>
+                            <span style="color:var(--t3)">focus  =</span> <span style="color:var(--c-passed)">test_automation</span>
+                        </div>
+
+                        <div class="side-card">
+                            <div class="side-card-head">
+                            <span class="q-dot" style="background:var(--c-passed)"></span>
+                            Focus areas
+                            </div>
+                            <div class="side-card-body">
+                            <ul class="focus-list">
+                                <li class="focus-item"><span class="fi">›</span>Pruebas de caja negra / aceptación</li>
+                                <li class="focus-item"><span class="fi">›</span>Automatización Python / pytest / Selenium</li>
+                                <li class="focus-item"><span class="fi">›</span>Validación de bases de datos SQL</li>
+                                <li class="focus-item"><span class="fi">›</span>Matrices de prueba exhaustivas</li>
+                                <li class="focus-item"><span class="fi">›</span>CI/CD con GitHub Actions</li>
+                            </ul>
+                            </div>
+                        </div>
+
+                        <div class="side-card">
+                            <div class="side-card-head">
+                            <span class="q-dot" style="background:var(--c-info)"></span>
+                            Soft skills
+                            </div>
+                            <div class="side-card-body">
+                            <div class="tags-wrap">
+                                <span class="stag">Comunicación directa</span>
+                                <span class="stag">Pensamiento lógico</span>
+                                <span class="stag">Alta disciplina</span>
+                                <span class="stag">Orientado a evidencia</span>
+                                <span class="stag">Autodidacta</span>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </section>

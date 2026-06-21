@@ -33,6 +33,6 @@
     "failures": 3,
     "skipped": 0
   },
-  "github": "https://github.com/ArielPinoM/urban-grocers-automated-api-testing",
+  "github": "https://github.com/ArielPinoM/urban-routes-automated-testing",
   "image": "./assets/urban-routes-automated/tests-terminal-screenshot.png"
 }
