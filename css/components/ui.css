@@ -1,0 +1,66 @@
+.badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.badge-passed  {
+  color: var(--c-passed);
+  border-color: var(--c-passed);
+  background: var(--c-passed-dim);
+}
+
+.badge-info {
+  color: var(--c-info);
+  border-color: var(--c-info);
+  background: var(--c-info-dim);
+}
+
+.badge-flaky {
+  color: var(--c-flaky);
+  border-color: var(--c-flaky);
+  background: var(--c-flaky-dim);
+}
+
+.badge-failed {
+  color: var(--c-failed);
+  border-color: var(--c-failed);
+  background: var(--c-failed-dim);
+}
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 9px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.04em;
+}
+
+.btn-primary {
+  background: var(--c-passed);
+  border-color: var(--c-passed);
+  color: #0d1117;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border-active);
+  color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}

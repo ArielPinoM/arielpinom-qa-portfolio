@@ -1,0 +1,415 @@
+#projects {
+  background: var(--bg-primary);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card-collapsed {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 16px;
+  cursor: pointer;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  transition: border-color 0.2s, background 0.2s;
+  min-height: 100px;
+}
+
+.card-collapsed:hover {
+  border-color: var(--border-active);
+}
+
+.card-collapsed > div:nth-child(2) {
+  width: 100%;
+  display: flex;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.collapsed-arrow {
+  color: var(--c-passed);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.collapsed-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 1px solid var(--bg-tertiary);
+  flex-shrink: 0;
+  margin-top: 16px;
+}
+
+.collapsed-info {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
+  gap: 16px;
+}
+
+.collapsed-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.card-body-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+  overflow: hidden;
+}
+
+.urban-routes-card.expanded,
+.urban-grocers-card.expanded,
+.urban-lunch-card.expanded,
+.chicago-taxi-card.expanded {
+  grid-column: 1 / -1 !important;
+}
+
+.urban-routes-card.expanded .collapsed-arrow,
+.urban-grocers-card.expanded .collapsed-arrow,
+.urban-lunch-card.expanded .collapsed-arrow,
+.chicago-taxi-card.expanded .collapsed-arrow {
+  transform: rotate(90deg);
+}
+
+.urban-routes-card.expanded .card-body-wrapper,
+.urban-grocers-card.expanded .card-body-wrapper,
+.urban-lunch-card.expanded .card-body-wrapper,
+.chicago-taxi-card.expanded .card-body-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.urban-routes-card.expanded .collapsed-img,
+.urban-grocers-card.expanded .collapsed-img,
+.urban-lunch-card.expanded .collapsed-img,
+.chicago-taxi-card.expanded .collapsed-img {
+  display: none;
+}
+
+.card-body-inner {
+  overflow: hidden;
+}
+
+.test-card {
+  border: 1px solid var(--border-color);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 32px;
+  transition: border-color var(--transition);
+}
+
+.test-card:hover {
+  border-color: var(--border-active);
+}
+
+.test-card-header {
+  background: var(--bg-card);
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.test-card-header-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.project-img {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--bg-tertiary);
+  transition: opacity 0.2s;
+  display: block;
+  cursor: pointer;
+}
+
+.project-img:hover {
+  opacity: 0.85;
+}
+
+.test-id {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.test-name {
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.test-h2 {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.test-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.status-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 4px;
+  width: fit-content;
+}
+
+.test-card-body {
+  background: var(--bg-secondary);
+}
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.metric {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.metric:last-child {
+  border-right: none;
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-key {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.abilities-row {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: grid;
+  padding: 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.abilities-col {
+  padding: 14px 16px;
+  border-right: 1px solid var(--border-color);
+}
+
+.abilities-col:last-child {
+  border-right: none;
+}
+
+.abilities-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.abilities-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.abilities-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+ul {
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+.ability-item {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ability-icon {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-passed);
+  flex-shrink: 0;
+}
+
+.test-card-footer {
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid var(--border-active);
+}
+
+.stack-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.stack-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+}
+
+.card-links {
+  display: flex;
+  gap: 8px;
+}
+
+.card-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--c-info);
+  border: 1px solid rgba(52, 152, 219, 0.35);
+  border-radius: var(--radius-md);
+  padding: 5px 12px;
+  transition: all var(--transition);
+}
+
+.card-link:hover {
+  background: var(--c-info-dim);
+  border-color: var(--c-info);
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 2px solid var(--c-info);
+  border-radius: 4px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  padding: 2px;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  color: var(--c-failed);
+  border-color: var(--c-failed);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .test-card-header {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .test-card-header > div:first-child {
+    width: 100%;
+  }
+  .test-card-header-secondary {
+    width: 100%;
+    align-items: center;
+  }
+  .status-badge {
+    text-align: center;
+    width: 100%;
+  }
+  .abilities-list {
+    padding: 0;
+  }
+  .test-id {
+    margin-top: 8px;
+  }
+}
