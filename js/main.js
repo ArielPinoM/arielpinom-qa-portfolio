@@ -5,6 +5,7 @@ import './components/project-cards/urban-lunch-card.js';
 import './components/project-cards/chicago-taxi-card.js';
 import './components/project-cards/urban-grocers-automated-card.js';
 import './components/project-cards/urban-routes-automated-card.js';
+import './components/project-cards/urban-scooter-card.js';
 
 // Contenedor de proyectos
 import './components/qa-project-suite.js';

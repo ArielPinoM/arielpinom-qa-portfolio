@@ -1,6 +1,6 @@
 {
   "component": "urban_grocers_qa",
-  "id": "TEST-002",
+  "id": "TEST-007",
   "file": "tests/api/tests_urban_grocers.md",
   "name": "QA Testing: Validación de Integración y API Testing — Urban Grocers",
   "description": "Aseguramiento de calidad enfocado en la validación de contratos de API y reglas de negocio del lado del servidor",

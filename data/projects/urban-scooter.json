@@ -1,0 +1,38 @@
+{
+  "component": "urban_scooter_qa",
+  "id": "TEST-001",
+  "file": "tests/urban-scooter-tests.md",
+  "name": "Urban Scooter QA",
+  "description": "Proyecto integral de pruebas manuales para una aplicación de alquiler de scooter, que cubre las capas web, móvil y API, con un proceso estructurado de reporte de defectos.",
+  "objective": "Validar la calidad funcional y de diseño de la aplicación Urban Scooter en sus tres capas — frontend web, frontend móvil y API backend — mediante el diseño y la ejecución de pruebas estructuradas, la documentación de defectos y la recopilación de evidencias siguiendo un flujo de trabajo profesional de QA.",
+  "problemStatement": "La aplicación presentó numerosos defectos funcionales, de validación y de documentación que comprometían la experiencia del usuario y la integridad de los datos. Fue necesario aplicar un enfoque sistemático de pruebas para identificar, reportar y dar seguimiento a estos problemas hasta su resolución.",
+  "keyLearningsAndAchievements": "Se diseñaron casos de prueba y checklists a partir de los requisitos de negocio y los prototipos de Figma. Se ejecutaron pruebas funcionales y de interfaz de usuario en múltiples navegadores, diferentes resoluciones de pantalla y un dispositivo móvil físico. Además, se realizaron pruebas de API con Postman, incluyendo la validación de datos mediante consultas SQL. Como resultado, se documentaron más de 70 reportes de errores en Jira con evidencia y trazabilidad completas, y se construyó una estructura de repositorio limpia y organizada, adecuada para un portafolio profesional de QA.",
+  "abilities": [
+    {
+      "title": "Pruebas y Análisis",
+      "color": "var(--c-passed)",
+      "abilities": [
+        "Revisión de requisitos y trazabilidad.", "Diseño de casos de prueba y checklists (funcionales y de UI).", "Análisis de valores límite y partición de equivalencia.", "Pruebas de API con Postman.", "Validación de bases de datos mediante consultas SQL.", "Pruebas multiplataforma y multidispositivo.", "Validación del diseño con base en referencias de Figma."
+      ]
+    },
+    {
+      "title": "Documentación y Proceso",
+      "color": "var(--c-info)",
+      "abilities": [
+        "Seguimiento y gestión de defectos en Jira.", "Recopilación y organización de evidencias de prueba.", "Elaboración de reportes de ejecución y seguimiento del progreso de las pruebas.", "Documentación profesional del repositorio con Markdown.", "Control de versiones con Git y GitHub."
+      ]
+    }
+  ],
+  "stack": ["Postman", "SQL", "Jira", "Figma", "Android Studio", "GitHub", "GitBash", "Markdown"],
+  "status": "passed",
+  "metrics": {
+    "coverage": 81,
+    "tests": 314,
+    "testsRun": 427,
+    "passed": 290,
+    "failures": 80,
+    "skipped": 57
+  },
+  "github": "https://github.com/ArielPinoM/urban-scooter-qa",
+  "image": "./assets/urban-scooter/urban-scooter-home-page.jpg"
+}

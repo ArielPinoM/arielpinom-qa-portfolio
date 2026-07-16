@@ -1,6 +1,6 @@
 {
   "component": "urban_routes_automated",
-  "id": "TEST-006",
+  "id": "TEST-002",
   "file": "tests/test_urban_routes.py",
   "name": "Suite Automatizada de Pruebas — Urban Routes ",
   "description": "Suite pruebas automatizadas → flujo completo reserva taxi con validaciones SMS, pago, extras.",

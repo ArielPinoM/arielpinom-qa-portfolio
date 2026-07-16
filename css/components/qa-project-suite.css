@@ -86,7 +86,8 @@
 .urban-lunch-card.expanded,
 .chicago-taxi-card.expanded,
 .urban-grocers-automated-card.expanded,
-.urban-routes-automated-card.expanded {
+.urban-routes-automated-card.expanded,
+.urban-scooter-card.expanded {
   grid-column: 1 / -1 !important;
 }
 
@@ -95,7 +96,8 @@
 .urban-lunch-card.expanded .collapsed-arrow,
 .chicago-taxi-card.expanded .collapsed-arrow,
 .urban-grocers-automated-card.expanded .collapsed-arrow,
-.urban-routes-automated-card.expanded .collapsed-arrow {
+.urban-routes-automated-card.expanded .collapsed-arrow,
+.urban-scooter-card.expanded .collapsed-arrow {
   transform: rotate(90deg);
 }
 
@@ -104,7 +106,8 @@
 .urban-lunch-card.expanded .card-body-wrapper,
 .chicago-taxi-card.expanded .card-body-wrapper,
 .urban-grocers-automated-card.expanded .card-body-wrapper,
-.urban-routes-automated-card.expanded .card-body-wrapper {
+.urban-routes-automated-card.expanded .card-body-wrapper,
+.urban-scooter-card.expanded .card-body-wrapper {
   grid-template-rows: 1fr;
 }
 
@@ -113,7 +116,8 @@
 .urban-lunch-card.expanded .collapsed-img,
 .chicago-taxi-card.expanded .collapsed-img,
 .urban-grocers-automated-card.expanded .collapsed-img,
-.urban-routes-automated-card.expanded .collapsed-img {
+.urban-routes-automated-card.expanded .collapsed-img,
+.urban-scooter-card.expanded .collapsed-img {
   display: none;
 }
 

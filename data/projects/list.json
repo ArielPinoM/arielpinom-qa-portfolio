@@ -1,8 +1,9 @@
 [
-    {"id": "urban-routes", "component": "urban-routes-card"},
-    {"id": "urban-grocers", "component": "urban-grocers-card"},
-    {"id": "urban-lunch", "component": "urban-lunch-card"},
-    {"id": "chicago-taxi", "component": "chicago-taxi-card"},
+    {"id": "urban-scooter", "component": "urban-scooter-card"},
+    {"id": "urban-routes-automated", "component": "urban-routes-automated-card"},
     {"id": "urban-grocers-automated", "component": "urban-grocers-automated-card"},
-    {"id": "urban-routes-automated", "component": "urban-routes-automated-card"}
+    {"id": "chicago-taxi", "component": "chicago-taxi-card"},
+    {"id": "urban-lunch", "component": "urban-lunch-card"},
+    {"id": "urban-grocers", "component": "urban-grocers-card"},
+    {"id": "urban-routes", "component": "urban-routes-card"}
 ]

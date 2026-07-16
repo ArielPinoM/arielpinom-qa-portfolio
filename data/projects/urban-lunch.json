@@ -1,6 +1,6 @@
 {
   "component": "urban_lunch_qa",
-  "id": "TEST-003",
+  "id": "TEST-006",
   "file": "tests/mobile/tests_urban_lunch.md",
   "name": "QA Testing: Validación Funcional y Flujo End-to-End - Urban Lunch [mobile]",
   "description": "Aseguramiento de calidad enfocado en la validación funcional, experiencia de usuario y robustez del flujo de pedidos",

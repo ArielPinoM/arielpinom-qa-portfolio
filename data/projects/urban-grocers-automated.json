@@ -1,6 +1,6 @@
 {
   "component": "urban_grocers_automated",
-  "id": "TEST-005",
+  "id": "TEST-003",
   "file": "tests/test_user_kit_creation.py",
   "name": "Suite Automatizada de Pruebas API — Urban Grocers ",
   "description": "Valida endpoints, flujos clave y contratos; detecta regresiones temprano.",
