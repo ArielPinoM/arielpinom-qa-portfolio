@@ -69,7 +69,6 @@ class QAAbout extends HTMLElement {
                                 <li class="focus-item"><span class="fi">›</span>Automatización Python / pytest / Selenium</li>
                                 <li class="focus-item"><span class="fi">›</span>Validación de bases de datos SQL</li>
                                 <li class="focus-item"><span class="fi">›</span>Matrices de prueba exhaustivas</li>
-                                <li class="focus-item"><span class="fi">›</span>CI/CD con GitHub Actions</li>
                             </ul>
                             </div>
                         </div>
