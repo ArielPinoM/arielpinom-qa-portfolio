@@ -19,7 +19,7 @@ class QAAbout extends HTMLElement {
                         <div class="photo-col">
                             <div class="photo-frame">
                                 <!-- REEMPLAZAR SRC -->
-                                <img class="photo-img" src="../../assets/linkedin-profile-photo.png" alt="Ariel - QA Engineer" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
+                                <img class="photo-img" src="/assets/linkedin-profile-photo.png" alt="Ariel - QA Engineer" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
                                 <!-- Placeholder visible cuando no hay imagen -->
                                 <div class="photo-ghost">
                                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#8b949e" stroke-width="1.2">
