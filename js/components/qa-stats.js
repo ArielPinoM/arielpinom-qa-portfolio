@@ -7,15 +7,26 @@ class QAStats extends HTMLElement {
   }
 
   calculateAndRender(projects) {
-    const testsWritten = projects.reduce((sum, p) => sum + (p.metrics?.tests ?? 0), 0);
-    const testsExecuted = projects.reduce((sum, p) => sum + (p.metrics?.testsRun ?? p.metrics?.tests ?? 0), 0);
+    const testsWritten = projects.reduce(
+      (sum, p) => sum + (p.metrics?.tests ?? 0),
+      0,
+    );
+    const testsExecuted = projects.reduce(
+      (sum, p) => sum + (p.metrics?.testsRun ?? p.metrics?.tests ?? 0),
+      0,
+    );
     const projectsCount = projects.length;
     // Herramientas únicas (opcional, puedes sumar una lista predefinida o contar stacks únicos)
     const allTools = new Set();
-    projects.forEach(p => p.stack?.forEach(t => allTools.add(t)));
+    projects.forEach((p) => p.stack?.forEach((t) => allTools.add(t)));
     const toolsCount = allTools.size;
-    const passedCount = projects.reduce((sum, p) => sum + (p.metrics?.passed || 0), 0);
-    const passRatePercent = testsExecuted ? Math.round((passedCount / testsExecuted) * 100) : 0;
+    const passedCount = projects.reduce(
+      (sum, p) => sum + (p.metrics?.passed || 0),
+      0,
+    );
+    const passRatePercent = testsExecuted
+      ? Math.round((passedCount / testsExecuted) * 100)
+      : 0;
 
     this.innerHTML = /*html*/ `
         <div class="container" style="padding-top:60px;">
@@ -40,11 +51,21 @@ class QAStats extends HTMLElement {
         </div>
         `;
 
-          this.animateCounters({testsWritten, projectsCount, toolsCount, passRatePercent});
+    this.animateCounters({
+      testsWritten,
+      projectsCount,
+      toolsCount,
+      passRatePercent,
+    });
   }
 
-  animateCounters({ testsWritten, projectsCount, toolsCount, passRatePercent }) {
-    const animate = (el, target, duration, suffix = '') => {
+  animateCounters({
+    testsWritten,
+    projectsCount,
+    toolsCount,
+    passRatePercent,
+  }) {
+    const animate = (el, target, duration, suffix = "") => {
       let start = 0;
       const step = Math.max(1, Math.ceil(target / (duration / 16)));
       const timer = setInterval(() => {
@@ -54,17 +75,25 @@ class QAStats extends HTMLElement {
       }, 16);
     };
 
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        animate(this.querySelector('#cnt-tests'), testsWritten, 1200);
-        animate(this.querySelector('#cnt-projects'), projectsCount, 600);
-        animate(this.querySelector('#cnt-tools'), toolsCount, 800);
-        animate(this.querySelector('#cnt-pass-rate'), passRatePercent, 800, '%');
-        observer.disconnect();
-      }
-    }, { threshold: 0.3 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          animate(this.querySelector("#cnt-tests"), testsWritten, 1200);
+          animate(this.querySelector("#cnt-projects"), projectsCount, 600);
+          animate(this.querySelector("#cnt-tools"), toolsCount, 800);
+          animate(
+            this.querySelector("#cnt-pass-rate"),
+            passRatePercent,
+            800,
+            "%",
+          );
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
 
-    observer.observe(this.querySelector('.stats-row'));
+    observer.observe(this.querySelector(".stats-row"));
   }
 }
 

@@ -26,6 +26,9 @@
     overflow: hidden;
     background-color: var(--bg-primary);
 }
+.photo-img{
+    max-width: 100%;
+}
 .photo-meta {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
