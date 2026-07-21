@@ -28,7 +28,7 @@ class QAHero extends HTMLElement {
                         <span class="badge badge-passed">✓ PASSED: Automation</span>
                         <span class="badge badge-info">ℹ INFO: API Testing</span>
                         <span class="badge badge-passed">✓ PASSED: SQL / DB</span>
-                        <span class="badge badge-flaky">~ ACTIVE: Learning</span>
+                        <span class="badge badge-flaky">~ ACTIVE: Open to Work</span>
                         </div>
                         <div class="hero-cta">
                         <a href="#projects" class="btn btn-primary">→ Ver Test Suite</a>
